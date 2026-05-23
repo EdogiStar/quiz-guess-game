@@ -22,6 +22,10 @@
     ".js": {
       "enabled": true,
       "run": "typescript-language-server --stdio"
+    },
+    ".css": {
+      "enabled": true,
+      "run": "vscode-css-language-server --stdio"
     }
   }
 }
