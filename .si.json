@@ -18,6 +18,10 @@
     ".md": {
       "enabled": true,
       "run": "marksman server"
+    },
+    ".js": {
+      "enabled": true,
+      "run": "typescript-language-server --stdio"
     }
   }
 }
