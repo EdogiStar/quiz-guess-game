@@ -1,6 +1,6 @@
 # Project
 
-Welcome to this project!
+Simple Quiz Guess Game - 3MTT Project 
 
 ## Getting Started
 

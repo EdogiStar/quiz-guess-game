@@ -1,4 +1,5 @@
 # Build files
+node_modules
 build/
 .gradle/
 *.class
