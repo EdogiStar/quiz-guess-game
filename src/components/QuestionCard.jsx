@@ -2,6 +2,14 @@ import questions from '../data/questions'
 
 function QuestionCard(){
     const currentQuestion = questions[0];
+    
+    // Handle answer click
+    const handleAnswerClick = (selectedOption) => {
+    console.log(selectedOption);
+
+    // Temporary testing
+    alert(`You selected: ${selectedOption}`);
+  };
     return (
         <>
           <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-6 space-y-6">
@@ -15,7 +23,7 @@ function QuestionCard(){
             <div className="flex flex-col gap-4">
               {
                   currentQuestion.options.map((option, index ) => (
-                      <button key={index} className="w-full text-left bg-gray-100 p-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200">
+                      <button key={index} onClick={() => handleAnswerClick(option)} className="w-full text-left bg-gray-100 p-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200">
                         {option}
                       </button>
                   ))
