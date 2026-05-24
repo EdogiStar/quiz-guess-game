@@ -8,9 +8,7 @@ function Header() {
           <h1 className="text-2xl font-bold text-blue-600">
           Quiz Game
           </h1>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-          Restart
-          </button>
+
         </div>
       </header>
     </>
