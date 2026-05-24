@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import questions from '../data/questions'
 
-function QuestionCard(){
+function QuestionCard(){ 
     // State for current question index
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     //current question 
@@ -25,12 +25,12 @@ function QuestionCard(){
           <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-6 space-y-6">
             
             <div>
-            { /* Questions  */}
+            
               <h2 className="text-2xl font-semibold text-gray-800 leading-snug">
                 {currentQuestion.question}
               </h2>
             </div>
-            { /* Options */}
+            
             <div className="flex flex-col gap-4">
               {
                   currentQuestion.options.map((option, index ) => (
