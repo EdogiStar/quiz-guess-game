@@ -2,6 +2,9 @@ import { useState } from 'react'
 import questions from '../data/questions'
 
 function QuestionCard(){ 
+    // score 
+    const [currentScore, setCurrentScore] = useState(0);
+    
     // State for current question index
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     //current question 
@@ -9,22 +12,25 @@ function QuestionCard(){
     
     // Handle answer click
     const handleAnswerClick = (selectedOption) => {
-      console.log(selectedOption);
-
-      // Temporary testing
-      alert(`You selected: ${selectedOption}`);
+      if(selectedOption === currentQuestion.answer){
+          setCurrentScore((prevScore) => prevScore + 1);
+      }
     };
     // Handle next question 
     const handleNextQuestion = () => 
         {
-            setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+            if(currentQuestionIndex < questions.length - 1){
+                setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+            }else{
+                
+            }
+            
         }
     return (
         <>
           <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-6 space-y-6">
-            
+            <h1>Score: { currentScore }</h1>
             <div>
-            
               <h2 className="text-2xl font-semibold text-gray-800 leading-snug">
                 {currentQuestion.question}
               </h2>
