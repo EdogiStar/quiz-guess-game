@@ -13,18 +13,13 @@ function QuestionCard(){
             </div>
             
             <div className="flex flex-col gap-4">
-              <button className="w-full text-left bg-gray-100 p-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200">
-              {currentQuestion.options[0]}
-              </button>
-              <button className="w-full text-left bg-gray-100 p-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200">
-               {currentQuestion.options[1]}
-              </button>
-              <button className="w-full text-left bg-gray-100 p-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200">
-               {currentQuestion.options[2]}
-              </button>
-              <button className="w-full text-left bg-gray-100 p-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200">
-               {currentQuestion.options[3]}
-              </button>
+              {
+                  currentQuestion.options.map((option, index ) => (
+                      <button key={index} className="w-full text-left bg-gray-100 p-3 rounded-lg hover:bg-blue-500 hover:text-white transition duration-200">
+                        {option}
+                      </button>
+                  ))
+              }
             </div>
             
             <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-200">
