@@ -2,11 +2,15 @@ import { useState } from 'react'
 import questions from '../data/questions'
 
 function QuestionCard(){ 
-    // score 
+    // quiz completed or not
+    const [ quizCompleted, setQuizCompleted ] = useState(false);
+    
+    // score state
     const [currentScore, setCurrentScore] = useState(0);
     
     // State for current question index
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    
     //current question 
     const currentQuestion = questions[currentQuestionIndex];
     
@@ -22,10 +26,20 @@ function QuestionCard(){
             if(currentQuestionIndex < questions.length - 1){
                 setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
             }else{
-                
+                setQuizCompleted(true);
             }
-            
         }
+        
+        if (quizCompleted) {
+          return (
+            <div className="text-center text-2xl font-bold">
+               Quiz Completed 🎉
+               <br />
+               Score: {currentScore}
+            </div>
+          );
+        }
+        
     return (
         <>
           <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-6 space-y-6">
