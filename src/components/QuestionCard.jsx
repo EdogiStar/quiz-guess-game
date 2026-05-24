@@ -9,17 +9,16 @@ function QuestionCard(){
     
     // Handle answer click
     const handleAnswerClick = (selectedOption) => {
-    console.log(selectedOption);
+      console.log(selectedOption);
 
-    // Temporary testing
-    alert(`You selected: ${selectedOption}`);
-    
+      // Temporary testing
+      alert(`You selected: ${selectedOption}`);
+    };
     // Handle next question 
     const handleNextQuestion = () => 
         {
             setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
         }
-    };
     return (
         <>
           <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-6 space-y-6">
